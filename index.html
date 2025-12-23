@@ -4,82 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- SEO: Title + Description -->
+    <!-- Google Search Console verification -->
+    <meta
+      name="google-site-verification"
+      content="ufaYYKUKsEMqqYgHq9VIvu6YUGq0r5mFx3pJ0cWh6A8"
+    />
+
+    <!-- SEO -->
     <title>Guillaume Sax – Saxophoniste mariage | Cocktails & soirées | France</title>
     <meta
       name="description"
-      content="Saxophoniste professionnel pour mariages : cocktail, cérémonie et soirée. Ambiance élégante et sur-mesure, partout en France. Réponse rapide."
+      content="Guillaume Sax, saxophoniste professionnel pour mariages, cocktails et soirées privées. Prestation élégante et sur-mesure partout en France."
     />
-    <meta name="robots" content="index,follow,max-image-preview:large" />
-
-    <!-- iOS: éviter les liens auto bleus (tel/email) -->
-    <meta name="format-detection" content="telephone=no,email=no,address=no" />
-
-    <!-- Mobile / PWA -->
-    <meta name="theme-color" content="#F9F7F2" />
-
-    <!-- Canonical (à valider quand le domaine sera relié) -->
-    <link rel="canonical" href="https://guillaumesax.fr" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://guillaumesax.fr/" />
 
     <!-- Icons -->
-    <link rel="icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <!-- Open Graph -->
-    <meta property="og:locale" content="fr_FR" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Guillaume Sax" />
     <meta property="og:title" content="Guillaume Sax – Saxophoniste mariage" />
     <meta
       property="og:description"
-      content="Saxophone live pour cocktail, cérémonie et soirée. Prestation élégante et sur-mesure, partout en France."
+      content="Saxophoniste professionnel pour mariage, cocktail et soirée privée. Ambiance élégante et sur-mesure."
     />
-    <meta property="og:url" content="https://guillaumesax.fr" />
-    <meta property="og:image" content="assets/og-image.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta
-      property="og:image:alt"
-      content="Guillaume Sax – saxophoniste pour mariages (cocktail, cérémonie, soirée)"
-    />
+    <meta property="og:url" content="https://guillaumesax.fr/" />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Guillaume Sax – Saxophoniste mariage" />
-    <meta
-      name="twitter:description"
-      content="Cocktail, cérémonie, soirée : saxophone live élégant et sur-mesure. Partout en France."
-    />
-    <meta name="twitter:image" content="assets/og-image.jpg" />
-
-    <!-- Structured Data (Schema.org) : LocalBusiness -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Guillaume Sax",
-        "description": "Saxophoniste professionnel pour mariages : cocktail, cérémonie et soirée. Ambiance élégante et sur-mesure.",
-        "url": "https://guillaumesax.fr",
-        "image": "assets/portrait.jpg",
-        "sameAs": ["https://www.instagram.com/guillaumesaxophone/"],
-        "areaServed": "FR",
-        "makesOffer": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Saxophoniste mariage",
-              "serviceType": ["Cocktail", "Cérémonie", "Soirée"]
-            }
-          }
-        ]
-      }
-    </script>
-
-    <!-- Tailwind (pour garder ton design identique) -->
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Fonts (TES POLICES) -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -89,7 +46,6 @@
 
     <style>
       html {
-        color-scheme: light;
         scroll-behavior: smooth;
         background-color: #f9f7f2;
       }
@@ -104,7 +60,6 @@
         overflow-x: hidden;
       }
 
-      /* ✅ TES CLASSES POLICES (comme avant) */
       .font-serif {
         font-family: "Playfair Display", serif;
       }
@@ -119,54 +74,38 @@
         font-weight: 900;
       }
 
-      /* Fix iPad/iOS dark mode sur champs */
-      input,
-      textarea,
-      select {
-        background-color: #ffffff !important;
-        color: #1a1a1a !important;
-        -webkit-text-fill-color: #1a1a1a !important;
-        border-color: rgba(26, 26, 26, 0.18) !important;
-        -webkit-appearance: none;
-        appearance: none;
+      section {
+        scroll-margin-top: 80px;
       }
 
-      input::placeholder,
-      textarea::placeholder {
-        color: rgba(26, 26, 26, 0.45) !important;
-        -webkit-text-fill-color: rgba(26, 26, 26, 0.45) !important;
+      .fluid-title {
+        font-size: clamp(2.5rem, 8vw, 12rem);
       }
 
-      input:-webkit-autofill,
-      input:-webkit-autofill:hover,
-      input:-webkit-autofill:focus,
-      textarea:-webkit-autofill,
-      textarea:-webkit-autofill:hover,
-      textarea:-webkit-autofill:focus,
-      select:-webkit-autofill,
-      select:-webkit-autofill:hover,
-      select:-webkit-autofill:focus {
-        -webkit-text-fill-color: #1a1a1a !important;
-        box-shadow: 0 0 0px 1000px #ffffff inset !important;
-        transition: background-color 9999s ease-in-out 0s;
-        caret-color: #1a1a1a !important;
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f9f7f2;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #d4af37;
+        border-radius: 10px;
       }
     </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3",
-    "react/": "https://esm.sh/react@^19.2.3/"
-  }
-}
-</script>
-</head>
+
+    <!-- React -->
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@^19.2.3",
+          "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+        }
+      }
+    </script>
+  </head>
 
   <body>
     <div id="root"></div>
-
-    <!-- IMPORTANT : on pointe sur TON fichier existant -->
-    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
