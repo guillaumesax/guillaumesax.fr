@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google Search Console verification -->
+    <!-- Google Search Console -->
     <meta
       name="google-site-verification"
       content="ufaYYKUKsEMqqYgHq9VIvu6YUGq0r5mFx3pJ0cWh6A8"
@@ -34,22 +34,17 @@
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <link rel="canonical" href="https://guillaumesax.fr/" />
 
-    <!-- Icons (pack complet) -->
-    <!-- Google / navigateurs -->
+    <!-- Favicons (servis depuis /public) -->
+    <link rel="icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
-
-    <!-- (Optionnel) si tu gardes un favicon.ico à la racine -->
-    <link rel="icon" href="/favicon.ico" />
-
-    <!-- iOS -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
-    <!-- Android / PWA -->
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/android-512.png" />
+    <!-- (Optionnel mais propre pour Android / PWA) -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#f9f7f2" />
 
-    <!-- Tailwind (CDN) -->
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Fonts -->
@@ -60,6 +55,7 @@
       rel="stylesheet"
     />
 
+    <!-- Styles globaux -->
     <style>
       html {
         scroll-behavior: smooth;
@@ -79,12 +75,15 @@
       .font-serif {
         font-family: "Playfair Display", serif;
       }
+
       .font-artistic {
         font-family: "Cormorant Garamond", serif;
       }
+
       .font-ephesis {
         font-family: "Ephesis", cursive;
       }
+
       .font-bogle {
         font-family: "Outfit", sans-serif;
         font-weight: 900;
@@ -106,9 +105,11 @@
       ::-webkit-scrollbar {
         width: 8px;
       }
+
       ::-webkit-scrollbar-track {
         background: #f9f7f2;
       }
+
       ::-webkit-scrollbar-thumb {
         background: #d4af37;
         border-radius: 10px;
@@ -130,7 +131,7 @@
 
     <div id="root"></div>
 
-    <!-- IMPORTANT : charge ton app React -->
+    <!-- Point d’entrée React (Vite) -->
     <script type="module" src="/index.tsx"></script>
   </body>
 </html>
