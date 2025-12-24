@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google Search Console verification -->
+    <!-- Google Search Console -->
     <meta
       name="google-site-verification"
       content="ufaYYKUKsEMqqYgHq9VIvu6YUGq0r5mFx3pJ0cWh6A8"
@@ -26,21 +26,49 @@
     <!-- End Google Tag Manager -->
 
     <!-- SEO -->
-    <title>Guillaume Sax – Saxophoniste mariage | Cocktails & soirées | France</title>
+    <title>
+      Guillaume Sax – Saxophoniste pour mariages & événements | France
+    </title>
     <meta
       name="description"
-      content="Saxophoniste professionnel pour mariages et événements privés. Prestation élégante et moderne pour cocktails, soirées et cérémonies partout en France."
+      content="Saxophoniste professionnel pour mariages, cocktails et événements privés. Une ambiance élégante, festive et sur-mesure partout en France."
     />
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <link rel="canonical" href="https://guillaumesax.fr/" />
 
-    <!-- Icons -->
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- Open Graph / WhatsApp / iMessage -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://guillaumesax.fr/" />
+    <meta
+      property="og:title"
+      content="Guillaume Sax – Saxophoniste pour mariages & événements"
+    />
+    <meta
+      property="og:description"
+      content="Saxophoniste professionnel pour mariages, cocktails et événements privés. Une ambiance élégante, festive et sur-mesure partout en France."
+    />
+    <meta
+      property="og:image"
+      content="https://guillaumesax.fr/og-image.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
-    <!-- Tailwind (CDN) -->
+    <!-- Twitter fallback -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://guillaumesax.fr/og-image.jpg"
+    />
+
+    <!-- Icons / PWA -->
+    <link rel="icon" href="/favicon-48.png" sizes="48x48" />
+    <link rel="icon" href="/favicon-96.png" sizes="96x96" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#d4af37" />
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Fonts -->
@@ -51,6 +79,7 @@
       rel="stylesheet"
     />
 
+    <!-- Styles globaux -->
     <style>
       html {
         scroll-behavior: smooth;
@@ -85,10 +114,6 @@
         scroll-margin-top: 80px;
       }
 
-      .fluid-title {
-        font-size: clamp(2.5rem, 8vw, 12rem);
-      }
-
       #root {
         min-height: 100vh;
         background-color: #f9f7f2;
@@ -121,7 +146,7 @@
 
     <div id="root"></div>
 
-    <!-- IMPORTANT : charge ton app React -->
+    <!-- App React (Vite) -->
     <script type="module" src="/index.tsx"></script>
   </body>
 </html>
