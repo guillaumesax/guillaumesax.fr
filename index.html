@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google Search Console -->
+    <!-- Google Search Console verification -->
     <meta
       name="google-site-verification"
       content="ufaYYKUKsEMqqYgHq9VIvu6YUGq0r5mFx3pJ0cWh6A8"
@@ -29,22 +29,18 @@
     <title>Guillaume Sax – Saxophoniste mariage | Cocktails & soirées | France</title>
     <meta
       name="description"
-      content="Guillaume Sax, saxophoniste professionnel pour mariages, cocktails et soirées privées. Prestation élégante et sur-mesure partout en France."
+      content="Saxophoniste professionnel pour mariages et événements privés. Prestation élégante et moderne pour cocktails, soirées et cérémonies partout en France."
     />
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <link rel="canonical" href="https://guillaumesax.fr/" />
 
-    <!-- Favicons (servis depuis /public) -->
+    <!-- Icons -->
     <link rel="icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <!-- (Optionnel mais propre pour Android / PWA) -->
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="theme-color" content="#f9f7f2" />
-
-    <!-- Tailwind -->
+    <!-- Tailwind (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Fonts -->
@@ -55,7 +51,6 @@
       rel="stylesheet"
     />
 
-    <!-- Styles globaux -->
     <style>
       html {
         scroll-behavior: smooth;
@@ -75,15 +70,12 @@
       .font-serif {
         font-family: "Playfair Display", serif;
       }
-
       .font-artistic {
         font-family: "Cormorant Garamond", serif;
       }
-
       .font-ephesis {
         font-family: "Ephesis", cursive;
       }
-
       .font-bogle {
         font-family: "Outfit", sans-serif;
         font-weight: 900;
@@ -105,11 +97,9 @@
       ::-webkit-scrollbar {
         width: 8px;
       }
-
       ::-webkit-scrollbar-track {
         background: #f9f7f2;
       }
-
       ::-webkit-scrollbar-thumb {
         background: #d4af37;
         border-radius: 10px;
@@ -131,7 +121,7 @@
 
     <div id="root"></div>
 
-    <!-- Point d’entrée React (Vite) -->
+    <!-- IMPORTANT : charge ton app React -->
     <script type="module" src="/index.tsx"></script>
   </body>
 </html>
