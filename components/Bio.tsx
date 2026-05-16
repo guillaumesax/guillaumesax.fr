@@ -40,7 +40,7 @@ const Bio: React.FC = () => {
               </p>
               
               <p>
-                Parallèlement à sa carrière artistique, he enseigne le saxophone au Conservatoire de Montélimar Agglomération, où il transmet avec enthousiasme son savoir-faire et sa passion aux jeunes musiciens.
+                Parallèlement à sa carrière artistique, il enseigne le saxophone au Conservatoire de Montélimar Agglomération, où il transmet avec enthousiasme son savoir-faire et sa passion aux jeunes musiciens.
               </p>
 
               <p>
