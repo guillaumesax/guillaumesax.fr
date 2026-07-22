@@ -1,0 +1,23 @@
+{
+  "name": "Guillaume Sax",
+  "short_name": "Guillaume Sax",
+  "description": "Saxophoniste professionnel pour mariages, cocktails et événements privés partout en France.",
+  "lang": "fr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f9f7f2",
+  "theme_color": "#d4af37",
+  "icons": [
+    {
+      "src": "/android-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

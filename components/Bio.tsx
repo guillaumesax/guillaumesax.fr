@@ -13,6 +13,10 @@ const Bio: React.FC = () => {
               <img
                 src="https://filedn.eu/lCrcyhrkkvYjfBEUTex82pz/assets/img/IMG_7950.jpeg"
                 alt="Guillaume Sax - Performance Live"
+                width="3648"
+                height="5472"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
               />
               <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-700"></div>

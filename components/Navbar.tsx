@@ -67,7 +67,9 @@ const Navbar: React.FC = () => {
           <button 
             onClick={toggleMenu}
             className="md:hidden text-white focus:outline-none p-2 z-[70]"
-            aria-label="Toggle Menu"
+            aria-label={isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
           >
             <div className="w-6 h-5 relative flex flex-col justify-between">
               <span className={`w-full h-[1px] bg-white transition-all duration-300 origin-left ${isMenuOpen ? 'rotate-45 translate-x-[2px]' : ''}`}></span>
@@ -80,6 +82,8 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       <div 
+        id="mobile-navigation"
+        aria-hidden={!isMenuOpen}
         className={`fixed inset-0 bg-black z-[50] flex items-center justify-center transition-all duration-500 ease-in-out md:hidden ${
           isMenuOpen ? 'translate-y-0 opacity-100 visible' : '-translate-y-full opacity-0 invisible'
         }`}

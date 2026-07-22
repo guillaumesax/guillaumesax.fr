@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://guillaumesax.fr/sitemap.xml

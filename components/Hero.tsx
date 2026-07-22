@@ -9,6 +9,10 @@ const Hero: React.FC = () => {
         <img
           src="https://filedn.eu/lCrcyhrkkvYjfBEUTex82pz/assets/img/Accueil.jpeg"
           alt="Saxophoniste Professionnel Mariage"
+          width="2048"
+          height="1366"
+          fetchPriority="high"
+          decoding="async"
           className="w-full h-full object-cover scale-110 animate-[zoom_20s_infinite_alternate]"
         />
         <div className="absolute inset-0 bg-black/40 bg-gradient-to-b from-black/50 via-transparent to-black/30"></div>

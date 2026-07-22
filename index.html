@@ -82,14 +82,39 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Guillaume Sax",
-        "alternateName": ["Guillaume Saxophone", "guillaumesaxophone"],
-        "url": "https://guillaumesax.fr/",
-        "image": "https://guillaumesax.fr/og-image.jpg",
-        "jobTitle": "Saxophoniste professionnel",
-        "description": "Saxophoniste professionnel pour mariages, cocktails, soirées privées et événements partout en France.",
-        "sameAs": ["https://www.instagram.com/guillaumesaxophone/"]
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://guillaumesax.fr/#website",
+            "url": "https://guillaumesax.fr/",
+            "name": "Guillaume Sax",
+            "inLanguage": "fr-FR",
+            "publisher": { "@id": "https://guillaumesax.fr/#guillaume" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://guillaumesax.fr/#guillaume",
+            "name": "Guillaume Sax",
+            "alternateName": ["Guillaume Saxophone", "guillaumesaxophone"],
+            "url": "https://guillaumesax.fr/",
+            "image": "https://guillaumesax.fr/og-image.jpg",
+            "jobTitle": "Saxophoniste professionnel",
+            "description": "Saxophoniste professionnel pour mariages, cocktails, soirées privées et événements partout en France.",
+            "sameAs": ["https://www.instagram.com/guillaumesaxophone/"]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://guillaumesax.fr/#service",
+            "name": "Prestations de saxophoniste pour mariages et événements",
+            "serviceType": "Saxophoniste professionnel pour mariages, cocktails et événements privés",
+            "provider": { "@id": "https://guillaumesax.fr/#guillaume" },
+            "areaServed": {
+              "@type": "Country",
+              "name": "France"
+            },
+            "url": "https://guillaumesax.fr/"
+          }
+        ]
       }
     </script>
 
@@ -104,6 +129,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Fonts -->
+    <link rel="preconnect" href="https://filedn.eu" />
+    <link rel="dns-prefetch" href="https://widget.tagembed.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

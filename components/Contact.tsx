@@ -59,10 +59,12 @@ Demande envoyée depuis le site guillaumesax.fr`;
         <form onSubmit={handleSubmit} className="space-y-8">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-2">
-              <label className="text-[10px] tracking-widest uppercase text-gray-400 font-bold">Nom complet</label>
+              <label htmlFor="name" className="text-[10px] tracking-widest uppercase text-gray-400 font-bold">Nom complet</label>
               <input
+                id="name"
                 type="text"
                 name="name"
+                autoComplete="name"
                 required
                 value={formData.name}
                 onChange={handleChange}
@@ -71,10 +73,12 @@ Demande envoyée depuis le site guillaumesax.fr`;
               />
             </div>
             <div className="space-y-2">
-              <label className="text-[10px] tracking-widest uppercase text-gray-400 font-bold">Email</label>
+              <label htmlFor="email" className="text-[10px] tracking-widest uppercase text-gray-400 font-bold">Email</label>
               <input
+                id="email"
                 type="email"
                 name="email"
+                autoComplete="email"
                 required
                 value={formData.email}
                 onChange={handleChange}
@@ -86,10 +90,12 @@ Demande envoyée depuis le site guillaumesax.fr`;
 
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-2">
-              <label className="text-[10px] tracking-widest uppercase text-gray-400 font-bold">Numéro de téléphone</label>
+              <label htmlFor="phone" className="text-[10px] tracking-widest uppercase text-gray-400 font-bold">Numéro de téléphone</label>
               <input
+                id="phone"
                 type="tel"
                 name="phone"
+                autoComplete="tel"
                 required
                 value={formData.phone}
                 onChange={handleChange}
@@ -98,8 +104,9 @@ Demande envoyée depuis le site guillaumesax.fr`;
               />
             </div>
             <div className="space-y-2">
-              <label className="text-[10px] tracking-widest uppercase text-gray-400 font-bold">Date de l'événement</label>
+              <label htmlFor="date" className="text-[10px] tracking-widest uppercase text-gray-400 font-bold">Date de l'événement</label>
               <input
+                id="date"
                 type="date"
                 name="date"
                 required
@@ -111,10 +118,12 @@ Demande envoyée depuis le site guillaumesax.fr`;
           </div>
 
           <div className="space-y-2">
-            <label className="text-[10px] tracking-widest uppercase text-gray-400 font-bold">Lieu</label>
+            <label htmlFor="location" className="text-[10px] tracking-widest uppercase text-gray-400 font-bold">Lieu</label>
             <input
+              id="location"
               type="text"
               name="location"
+              autoComplete="address-level2"
               required
               value={formData.location}
               onChange={handleChange}
@@ -124,8 +133,9 @@ Demande envoyée depuis le site guillaumesax.fr`;
           </div>
 
           <div className="space-y-2">
-            <label className="text-[10px] tracking-widest uppercase text-gray-400 font-bold">Votre message</label>
+            <label htmlFor="message" className="text-[10px] tracking-widest uppercase text-gray-400 font-bold">Votre message</label>
             <textarea
+              id="message"
               name="message"
               rows={4}
               required

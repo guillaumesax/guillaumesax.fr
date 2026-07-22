@@ -29,9 +29,8 @@ const InstagramFeed: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    // 2. Script de nettoyage dynamique (Intervalle) pour supprimer le bouton d'avis récalcitrant
-    // Cette boucle de surveillance assure la suppression des éléments injectés après le rendu
-    const interval = setInterval(() => {
+    // 2. Nettoyage des éléments injectés, uniquement lorsque le widget évolue.
+    const cleanWidget = () => {
       const selectors = [
         '.tagembed-social-wall-review-btn',
         '.tagembed-collect-review-button',
@@ -53,10 +52,14 @@ const InstagramFeed: React.FC = () => {
       // Nettoyage des logos et mentions commerciales pour un look premium
       const watermarks = document.querySelectorAll('.tagembed-logo, .tagembed-powered-by, .tagembed-watermark, .tagembed-copyright');
       watermarks.forEach(el => el.remove());
+    };
 
-    }, 500);
+    cleanWidget();
 
-    return () => clearInterval(interval);
+    const observer = new MutationObserver(cleanWidget);
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => observer.disconnect();
   }, []);
 
   return (
