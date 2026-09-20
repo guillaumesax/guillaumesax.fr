@@ -1,0 +1,669 @@
+{
+  "syncedAt": "2026-09-15T13:53:16.946Z",
+  "songs": [
+    {
+      "id": "david guetta::titanium",
+      "artist": "David Guetta",
+      "title": "Titanium",
+      "style": "DANCE",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "amy winehouse::rehab",
+      "artist": "Amy Winehouse",
+      "title": "Rehab",
+      "style": "POP",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "avicii::wake me up",
+      "artist": "Avicii",
+      "title": "Wake Me Up",
+      "style": "POP",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "coldplay::hymn for the weekend",
+      "artist": "Coldplay",
+      "title": "Hymn for the Weekend",
+      "style": "POP",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "bakermat::one day (vandaag)",
+      "artist": "Bakermat",
+      "title": "One Day (Vandaag)",
+      "style": "SPÉCIAL SAX",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "bakermat::breathe",
+      "artist": "Bakermat",
+      "title": "Breathe",
+      "style": "SPÉCIAL SAX",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "bakermat::baiana",
+      "artist": "Bakermat",
+      "title": "Baianá",
+      "style": "SPÉCIAL SAX",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "bakermat::baby",
+      "artist": "Bakermat",
+      "title": "Baby",
+      "style": "SPÉCIAL SAX",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "bakermat::living",
+      "artist": "Bakermat",
+      "title": "Living",
+      "style": "SPÉCIAL SAX",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "jimmy sax::no man no cry",
+      "artist": "Jimmy Sax",
+      "title": "No Man No Cry",
+      "style": "SPÉCIAL SAX",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "jimmy sax::una mattina",
+      "artist": "Jimmy Sax",
+      "title": "Una Mattina",
+      "style": "SPÉCIAL SAX",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "jimmy sax::time",
+      "artist": "Jimmy Sax",
+      "title": "Time",
+      "style": "SPÉCIAL SAX",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "ehrling::breeze",
+      "artist": "Ehrling",
+      "title": "Breeze",
+      "style": "SPÉCIAL SAX",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "justin bieber::stay",
+      "artist": "Justin Bieber",
+      "title": "Stay",
+      "style": "DANCE",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "klingande::jubel",
+      "artist": "Klingande",
+      "title": "Jubel",
+      "style": "SPÉCIAL SAX",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "kungs::this girl",
+      "artist": "Kungs",
+      "title": "This Girl",
+      "style": "DANCE",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "luis fonsi::despacito",
+      "artist": "Luis Fonsi",
+      "title": "Despacito",
+      "style": "LATINO",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "maneskin::beggin'",
+      "artist": "Maneskin",
+      "title": "Beggin'",
+      "style": "POP",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "breakbot, irfane::baby i'm yours",
+      "artist": "Breakbot, Irfane",
+      "title": "Baby I'm Yours",
+      "style": "POP",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "dua lipa::break my heart",
+      "artist": "Dua Lipa",
+      "title": "Break My Heart",
+      "style": "POP",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "plan b::she said",
+      "artist": "Plan B",
+      "title": "She Said",
+      "style": "POP",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "rosalia::despecha",
+      "artist": "Rosalía",
+      "title": "Despechá",
+      "style": "LATINO",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "aretha franklin::(you make me feel like) a natural woman",
+      "artist": "Aretha Franklin",
+      "title": "(You Make Me Feel Like) A Natural Woman",
+      "style": "JAZZ",
+      "energy": "CALME",
+      "isNew": false
+    },
+    {
+      "id": "aretha franklin::i say a little prayer",
+      "artist": "Aretha Franklin",
+      "title": "I Say a Little Prayer",
+      "style": "JAZZ",
+      "energy": "CALME",
+      "isNew": false
+    },
+    {
+      "id": "bill withers::ain't no sunshine",
+      "artist": "Bill Withers",
+      "title": "Ain't No Sunshine",
+      "style": "JAZZ",
+      "energy": "CALME",
+      "isNew": false
+    },
+    {
+      "id": "gregory porter::hey laura",
+      "artist": "Gregory Porter",
+      "title": "Hey Laura",
+      "style": "JAZZ",
+      "energy": "CALME",
+      "isNew": false
+    },
+    {
+      "id": "adele::someone like you",
+      "artist": "Adele",
+      "title": "Someone Like You",
+      "style": "POP",
+      "energy": "CALME",
+      "isNew": false
+    },
+    {
+      "id": "coldplay::fix you",
+      "artist": "Coldplay",
+      "title": "Fix You",
+      "style": "POP",
+      "energy": "CALME",
+      "isNew": false
+    },
+    {
+      "id": "ed sheeran::perfect",
+      "artist": "Ed Sheeran",
+      "title": "Perfect",
+      "style": "POP",
+      "energy": "CALME",
+      "isNew": false
+    },
+    {
+      "id": "bruno mars::talking to the moon",
+      "artist": "Bruno Mars",
+      "title": "Talking to the Moon",
+      "style": "POP",
+      "energy": "CALME",
+      "isNew": false
+    },
+    {
+      "id": "elvis presley::can't help falling in love",
+      "artist": "Elvis Presley",
+      "title": "Can't Help Falling In Love",
+      "style": "POP",
+      "energy": "CALME",
+      "isNew": false
+    },
+    {
+      "id": "keane::somewhere only we know",
+      "artist": "Keane",
+      "title": "Somewhere Only We Know",
+      "style": "POP",
+      "energy": "CALME",
+      "isNew": false
+    },
+    {
+      "id": "lady gaga::i'll never love again",
+      "artist": "Lady Gaga",
+      "title": "I'll Never Love Again",
+      "style": "POP",
+      "energy": "CALME",
+      "isNew": false
+    },
+    {
+      "id": "norah jones::don't know why",
+      "artist": "Norah Jones",
+      "title": "Don't Know Why",
+      "style": "JAZZ",
+      "energy": "CALME",
+      "isNew": false
+    },
+    {
+      "id": "petit biscuit::sunset lover",
+      "artist": "Petit Biscuit",
+      "title": "Sunset Lover",
+      "style": "POP",
+      "energy": "CALME",
+      "isNew": false
+    },
+    {
+      "id": "ben e. king::stand by me",
+      "artist": "Ben E. King",
+      "title": "Stand by Me",
+      "style": "JAZZ",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "alan walker::faded",
+      "artist": "Alan Walker",
+      "title": "Faded",
+      "style": "POP",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "angele::tout oublier",
+      "artist": "Angèle",
+      "title": "Tout oublier",
+      "style": "POP",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "bill withers, grover washington jr.::just the two of us",
+      "artist": "Bill Withers, Grover Washington Jr.",
+      "title": "Just the Two of Us",
+      "style": "JAZZ",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "imagine dragons::believer",
+      "artist": "Imagine Dragons",
+      "title": "Believer",
+      "style": "POP",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "charlie puth, wiz khalifa::see you again",
+      "artist": "Charlie Puth, Wiz Khalifa",
+      "title": "See You Again",
+      "style": "POP",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "earth, wind & fire::september",
+      "artist": "Earth, Wind & Fire",
+      "title": "September",
+      "style": "POP",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "elton john, dua lipa::cold heart (pnau remix)",
+      "artist": "Elton John, Dua Lipa",
+      "title": "Cold Heart (Pnau remix)",
+      "style": "POP",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "pharrell williams, daft punk::get lucky",
+      "artist": "Pharrell Williams, Daft Punk",
+      "title": "Get Lucky",
+      "style": "POP",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "sting::englishman in new york",
+      "artist": "Sting",
+      "title": "Englishman in New York",
+      "style": "POP",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "the weeknd::save your tears",
+      "artist": "The Weeknd",
+      "title": "Save Your Tears",
+      "style": "POP",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "the weeknd::i feel it coming",
+      "artist": "The Weeknd",
+      "title": "I Feel It Coming",
+      "style": "POP",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "alicia keys::girl on fire",
+      "artist": "Alicia Keys",
+      "title": "Girl on Fire",
+      "style": "POP",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "camila cabello, shawn mendes::senorita",
+      "artist": "Camila Cabello, Shawn Mendes",
+      "title": "Señorita",
+      "style": "POP",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "dua lipa::idgaf",
+      "artist": "Dua Lipa",
+      "title": "IDGAF",
+      "style": "POP",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "katy perry::roar",
+      "artist": "Katy Perry",
+      "title": "Roar",
+      "style": "POP",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "lil nas x::old town road (i got the horses in the back)",
+      "artist": "Lil Nas X",
+      "title": "Old Town Road (I Got the Horses in the Back)",
+      "style": "POP",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "m83::midnight city",
+      "artist": "M83",
+      "title": "Midnight City",
+      "style": "POP",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "silk sonic, bruno mars & anderson .paak::leave the door open",
+      "artist": "Silk Sonic, Bruno Mars & Anderson .Paak",
+      "title": "Leave the Door Open",
+      "style": "POP",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "tones and i::dance monkey",
+      "artist": "Tones And I",
+      "title": "Dance Monkey",
+      "style": "POP",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "ariana grande, the weeknd::love me harder",
+      "artist": "Ariana Grande, The Weeknd",
+      "title": "Love Me Harder",
+      "style": "POP",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "bruno mars::locked out of heaven",
+      "artist": "Bruno Mars",
+      "title": "Locked Out of Heaven",
+      "style": "POP",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "calvin harris, rihanna::we found love",
+      "artist": "Calvin Harris, Rihanna",
+      "title": "We Found Love",
+      "style": "DANCE",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "coldplay::clocks",
+      "artist": "Coldplay",
+      "title": "Clocks",
+      "style": "POP",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "lewis capaldi::someone you loved",
+      "artist": "Lewis Capaldi",
+      "title": "Someone You Loved",
+      "style": "POP",
+      "energy": "CALME",
+      "isNew": false
+    },
+    {
+      "id": "lewis capaldi::before you go",
+      "artist": "Lewis Capaldi",
+      "title": "Before You Go",
+      "style": "POP",
+      "energy": "CALME",
+      "isNew": false
+    },
+    {
+      "id": "meduza, goodboys::piece of your heart",
+      "artist": "Meduza, Goodboys",
+      "title": "Piece of Your Heart",
+      "style": "DANCE",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "ricchi e poveri::sara perche ti amo",
+      "artist": "Ricchi e Poveri",
+      "title": "Sarà perché ti amo",
+      "style": "POP",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "teddy swims::lose control",
+      "artist": "Teddy Swims",
+      "title": "Lose Control",
+      "style": "POP",
+      "energy": "CALME",
+      "isNew": false
+    },
+    {
+      "id": "louis armstrong::mack the knife",
+      "artist": "Louis Armstrong",
+      "title": "Mack the Knife",
+      "style": "JAZZ",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "luiz bonfa::manha de carnaval (black orpheus)",
+      "artist": "Luiz Bonfá",
+      "title": "Manhã de Carnaval (Black Orpheus)",
+      "style": "JAZZ",
+      "energy": "CALME",
+      "isNew": false
+    },
+    {
+      "id": "joe henderson::blue bossa",
+      "artist": "Joe Henderson",
+      "title": "Blue Bossa",
+      "style": "JAZZ",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "joe zawinul::mercy, mercy, mercy",
+      "artist": "Joe Zawinul",
+      "title": "Mercy, Mercy, Mercy",
+      "style": "JAZZ",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "frank sinatra::fly me to the moon",
+      "artist": "Frank Sinatra",
+      "title": "Fly Me to the Moon",
+      "style": "JAZZ",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "sam smith::i'm not the only one",
+      "artist": "Sam Smith",
+      "title": "I'm Not the Only One",
+      "style": "POP",
+      "energy": "CALME",
+      "isNew": false
+    },
+    {
+      "id": "sade::smooth operator",
+      "artist": "Sade",
+      "title": "Smooth Operator",
+      "style": "JAZZ",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "miley cyrus::flowers",
+      "artist": "Miley Cyrus",
+      "title": "Flowers",
+      "style": "POP",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "the police::every breath you take",
+      "artist": "The Police",
+      "title": "Every Breath You Take",
+      "style": "POP",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "nat king cole::l-o-v-e",
+      "artist": "Nat King Cole",
+      "title": "L-O-V-E",
+      "style": "JAZZ",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "alex warren::ordinary",
+      "artist": "Alex Warren",
+      "title": "Ordinary",
+      "style": "POP",
+      "energy": "CALME",
+      "isNew": false
+    },
+    {
+      "id": "olivia dean::man i need",
+      "artist": "Olivia Dean",
+      "title": "Man I Need",
+      "style": "POP",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "gnarls barkley::crazy",
+      "artist": "Gnarls Barkley",
+      "title": "Crazy",
+      "style": "POP",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "bee gees::how deep is your love",
+      "artist": "Bee Gees",
+      "title": "How Deep Is Your Love",
+      "style": "POP",
+      "energy": "CALME",
+      "isNew": false
+    },
+    {
+      "id": "ehrling::sthlm sunset",
+      "artist": "Ehrling",
+      "title": "Sthlm Sunset",
+      "style": "SPÉCIAL SAX",
+      "energy": "COOL",
+      "isNew": false
+    },
+    {
+      "id": "bad bunny::nuevayol",
+      "artist": "Bad Bunny",
+      "title": "Nuevayol",
+      "style": "LATINO",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "gala::freed from desire",
+      "artist": "Gala",
+      "title": "Freed From Desire",
+      "style": "DANCE",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "klingande::only god can save our souls",
+      "artist": "Klingande",
+      "title": "Only God Can Save Our Souls",
+      "style": "SPÉCIAL SAX",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    },
+    {
+      "id": "jimmy sax::drop it",
+      "artist": "Jimmy Sax",
+      "title": "Drop It",
+      "style": "SPÉCIAL SAX",
+      "energy": "ENTRAÎNANT",
+      "isNew": false
+    }
+  ]
+}
