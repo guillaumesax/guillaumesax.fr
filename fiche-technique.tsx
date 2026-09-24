@@ -156,7 +156,7 @@ function App() {
                 <p className="eyebrow">OPTION SUR DEVIS</p>
                 <h3>Besoin d’une sonorisation ?</h3>
                 <p>Je peux fournir le système si nécessaire, avec supplément et sur devis.</p>
-                <a href="mailto:guillaume.sax@gmail.com?subject=Sonorisation%20de%20notre%20%C3%A9v%C3%A9nement">En discuter ensemble <ArrowUpRight size={16} aria-hidden="true" /></a>
+                <a href="mailto:contact@guillaumesax.fr?subject=Sonorisation%20de%20notre%20%C3%A9v%C3%A9nement">En discuter ensemble <ArrowUpRight size={16} aria-hidden="true" /></a>
               </div>
             </div>
           </section>
@@ -224,8 +224,8 @@ function App() {
             <div><p className="eyebrow">CONTACT TECHNIQUE</p><h2>Une question<br /><em>technique ?</em></h2></div>
             <div>
               <p>Si le lieu ou l’installation présente une contrainte particulière, contactez-moi afin de la valider en amont.</p>
-              <a className="contact-link" href="mailto:guillaume.sax@gmail.com"><Mail size={18} aria-hidden="true" /> guillaume.sax@gmail.com <ArrowUpRight size={17} aria-hidden="true" /></a>
-              <a className="contact-link" href="tel:+33659448834"><Phone size={18} aria-hidden="true" /> 06 59 44 88 34 <ArrowUpRight size={17} aria-hidden="true" /></a>
+              <a className="contact-link" href="mailto:contact@guillaumesax.fr"><Mail size={18} aria-hidden="true" /> contact@guillaumesax.fr <ArrowUpRight size={17} aria-hidden="true" /></a>
+              <a className="contact-link" href="tel:+33659448834"><Phone size={18} aria-hidden="true" /> +33 6 59 44 88 34 <ArrowUpRight size={17} aria-hidden="true" /></a>
               <div className="share-actions"><a className="pdf-link" href={pdf} download><Download size={16} aria-hidden="true" /> Télécharger la fiche PDF</a></div>
             </div>
           </div>
