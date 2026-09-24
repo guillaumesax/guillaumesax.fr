@@ -89,7 +89,7 @@ function App() {
             <h2 id="essentials-title">Les essentiels</h2>
             <div className="essential">
               <Clock3 aria-hidden="true" />
-              <div><strong className="time-label"><span>1</span> h avant max.</strong><p>Arrivée, installation & balance</p></div>
+              <div><strong>Arrivée</strong><p>1 h avant max. · Installation & balance</p></div>
               <span className="ordinal">01</span>
             </div>
             <div className="essential">
@@ -166,31 +166,34 @@ function App() {
               <span className="section-number">03 /</span>
               <p className="eyebrow">IMPLANTATION TECHNIQUE</p>
               <h2>Positionnement<br /><em>& espace technique.</em></h2>
-              <p>Un point technique fixe, centré entre les deux enceintes, sert de base au matériel.</p>
+              <p>Je me place à égale distance des deux enceintes. Une petite table, à côté de l’une d’elles, accueille mon matériel.</p>
             </div>
             <div className="chapter-content">
               <div
                 className="placement-plan"
                 role="img"
-                aria-label="Implantation recommandée : deux enceintes en façade et un point technique avec table de 50 par 50 centimètres placé au centre, à égale distance des deux enceintes."
+                aria-label="Implantation recommandée : les deux enceintes forment la base d’un triangle équilatéral. Guillaume se place à la pointe, à égale distance des deux enceintes. Une table de 50 par 50 centimètres est installée à côté de l’enceinte gauche."
               >
-                <svg className="plan-lines" viewBox="0 0 420 245" aria-hidden="true">
-                  <path d="M72 58 L210 205 L348 58 Z" />
-                </svg>
-                <div className="plan-speaker plan-speaker-left"><Speaker aria-hidden="true" /><span>Enceinte gauche</span></div>
-                <div className="plan-speaker plan-speaker-right"><Speaker aria-hidden="true" /><span>Enceinte droite</span></div>
-                <div className="plan-base"><span>Point technique</span><strong>Table 50 × 50 cm</strong><small>À égale distance</small></div>
+                <div className="plan-geometry">
+                  <svg className="plan-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M14 10 L86 10 L50 87 Z" />
+                  </svg>
+                  <div className="plan-speaker plan-speaker-left"><Speaker aria-hidden="true" /><span>Enceinte gauche</span></div>
+                  <div className="plan-speaker plan-speaker-right"><Speaker aria-hidden="true" /><span>Enceinte droite</span></div>
+                  <div className="plan-table">Table 50 × 50 cm</div>
+                  <div className="plan-performer"><span>Guillaume Sax</span><strong>Position de référence</strong></div>
+                </div>
               </div>
-              <p className="plan-caption"><strong>Le point technique est placé au centre des deux enceintes</strong>, à égale distance de chacune, pour garder une écoute cohérente du système.</p>
+              <p className="plan-caption"><strong>Je me place à la pointe du triangle équilatéral</strong>, à égale distance des deux enceintes. La table et le point technique restent à côté de l’une d’elles.</p>
 
               <div className="mobility-note">
                 <Radio size={23} aria-hidden="true" />
-                <div><h3>Je joue sans fil</h3><p>Je peux me déplacer pendant la prestation, tout en conservant ce point de chute technique pour poser et piloter une partie du matériel.</p></div>
+                <div><h3>Je joue sans fil</h3><p>Cette position sert de repère sonore : je peux me déplacer pendant la prestation. La table, près d’une enceinte, reste mon point de chute technique.</p></div>
               </div>
 
               <div className="table-spec">
                 <div className="table-drawing" aria-hidden="true"><span>50 cm min.</span><div /><span>50 cm min.</span></div>
-                <div><h3>Une petite table stable</h3><p>Dimensions minimales :<br /><strong>50 × 50 cm.</strong></p></div>
+                <div><h3>Une petite table stable</h3><p>Dimensions minimales : <strong>50 × 50 cm.</strong><br />À placer à côté d’une des deux enceintes.</p></div>
               </div>
 
               <div className="outdoor">
