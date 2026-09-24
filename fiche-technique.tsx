@@ -8,6 +8,7 @@ import {
   Clock3,
   Download,
   GlassWater,
+  Instagram,
   Mail,
   Phone,
   PlugZap,
@@ -241,7 +242,10 @@ function App() {
       <footer className="footer wrap">
         <div className="brand">Guillaume <em>Sax</em></div>
         <a href="#contenu">Retour en haut ↑</a>
-        <p className="destination-url">https://guillaumesax.fr/fiche-technique</p>
+        <nav className="footer-links" aria-label="Retrouver Guillaume Sax">
+          <a href="https://guillaumesax.fr/"><ArrowUpRight size={15} aria-hidden="true" />https://guillaumesax.fr/</a>
+          <a href="https://www.instagram.com/guillaumesaxophone/" target="_blank" rel="noopener noreferrer"><Instagram size={15} aria-hidden="true" />Instagram · @guillaumesaxophone</a>
+        </nav>
       </footer>
     </>
   );
