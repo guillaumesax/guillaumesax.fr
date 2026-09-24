@@ -10,7 +10,7 @@ export default defineConfig({
       input: {
         main: "index.html",
         musiques: "musiques/index.html",
-        technicalSheet: "fiche-technique/index.html",
+        technicalSheet: "technique/index.html",
       },
     },
   },
