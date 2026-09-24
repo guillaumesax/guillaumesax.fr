@@ -166,34 +166,34 @@ function App() {
               <span className="section-number">03 /</span>
               <p className="eyebrow">IMPLANTATION TECHNIQUE</p>
               <h2>Positionnement<br /><em>& espace technique.</em></h2>
-              <p>Je me place à égale distance des deux enceintes. Une petite table, à côté de l’une d’elles, accueille mon matériel.</p>
+              <p>Je me place à égale distance des deux enceintes. La table et l’arrivée électrique se trouvent juste derrière l’enceinte gauche.</p>
             </div>
             <div className="chapter-content">
               <div
                 className="placement-plan"
                 role="img"
-                aria-label="Implantation recommandée : les deux enceintes forment la base d’un triangle équilatéral. Guillaume se place à la pointe, à égale distance des deux enceintes. Une table de 50 par 50 centimètres est installée à côté de l’enceinte gauche."
+                aria-label="Implantation recommandée : les deux enceintes forment la base d’un triangle équilatéral. Guillaume se place à la pointe, à égale distance des deux enceintes. La table de 50 par 50 centimètres et l’arrivée électrique sont juste derrière l’enceinte gauche."
               >
                 <div className="plan-geometry">
                   <svg className="plan-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                    <path d="M14 10 L86 10 L50 87 Z" />
+                    <path d="M14 28 L86 28 L50 98 Z" />
                   </svg>
                   <div className="plan-speaker plan-speaker-left"><Speaker aria-hidden="true" /><span>Enceinte gauche</span></div>
                   <div className="plan-speaker plan-speaker-right"><Speaker aria-hidden="true" /><span>Enceinte droite</span></div>
-                  <div className="plan-table">Table 50 × 50 cm</div>
+                  <div className="plan-table"><span>Table 50 × 50 cm</span><span className="plan-power"><PlugZap size={13} aria-hidden="true" /> Arrivée électrique</span></div>
                   <div className="plan-performer"><span>Guillaume Sax</span><strong>Position de référence</strong></div>
                 </div>
               </div>
-              <p className="plan-caption"><strong>Je me place à la pointe du triangle équilatéral</strong>, à égale distance des deux enceintes. La table et le point technique restent à côté de l’une d’elles.</p>
+              <p className="plan-caption"><strong>Je me place à la pointe du triangle équilatéral</strong>, à égale distance des deux enceintes. La table et l’arrivée électrique sont juste derrière l’enceinte gauche.</p>
 
               <div className="mobility-note">
                 <Radio size={23} aria-hidden="true" />
-                <div><h3>Je joue sans fil</h3><p>Cette position sert de repère sonore : je peux me déplacer pendant la prestation. La table, près d’une enceinte, reste mon point de chute technique.</p></div>
+                <div><h3>Je joue sans fil</h3><p>Cette position sert de repère sonore : je peux me déplacer pendant la prestation. La table, derrière l’enceinte gauche, reste mon point de chute technique.</p></div>
               </div>
 
               <div className="table-spec">
                 <div className="table-drawing" aria-hidden="true"><span>50 cm min.</span><div /><span>50 cm min.</span></div>
-                <div><h3>Une petite table stable</h3><p>Dimensions minimales : <strong>50 × 50 cm.</strong><br />À placer à côté d’une des deux enceintes.</p></div>
+                <div><h3>Une petite table stable</h3><p>Dimensions minimales : <strong>50 × 50 cm.</strong><br />À placer juste derrière l’enceinte gauche, près de l’arrivée électrique.</p></div>
               </div>
 
               <div className="outdoor">
