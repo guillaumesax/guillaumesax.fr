@@ -10,4 +10,234 @@
 .footer{flex-wrap:wrap}.footer>a{font-size:11px;min-height:44px;display:flex;align-items:center}.destination-url{flex-basis:100%;font-size:12px;color:var(--gold);overflow-wrap:anywhere;padding-top:8px}
 @media(max-width:700px){.topbar{padding-bottom:19px;gap:12px}.topbar>.eyebrow{font-size:9px}.footer .destination-url{font-size:11px}}
 
+/* Revision: clearer technical language and layout. */
+.hero h1 {
+  max-width: 620px;
+}
+
+.essential .time-label {
+  font: 500 27px/1.15 Inter, Arial, sans-serif;
+  letter-spacing: -0.6px;
+}
+
+.essential .time-label span {
+  font-family: var(--mono);
+  font-size: 31px;
+  font-variant-numeric: tabular-nums;
+}
+
+.arrival-card {
+  display: flex;
+  gap: 22px;
+  padding: 28px;
+  margin-bottom: 24px;
+  border: 1px solid #d7cbbb;
+  background: #f1ece2;
+}
+
+.arrival-card > svg {
+  margin-top: 4px;
+  color: var(--gold);
+}
+
+.arrival-card h3 {
+  margin-top: 10px;
+  font: 36px/1.16 var(--serif);
+  letter-spacing: -0.5px;
+}
+
+.arrival-card .numeric {
+  font-family: var(--mono);
+  font-size: 31px;
+  font-variant-numeric: tabular-nums;
+  color: var(--gold);
+}
+
+.arrival-card > div > p:last-child {
+  max-width: 520px;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.placement-plan {
+  position: relative;
+  min-height: 285px;
+  margin-bottom: 22px;
+  border: 1px solid #d7cbbb;
+  background: linear-gradient(180deg, #f5f1e8, #eee7da);
+  overflow: hidden;
+}
+
+.plan-lines {
+  position: absolute;
+  inset: 13px 7% 7px;
+  width: 86%;
+  height: calc(100% - 20px);
+}
+
+.plan-lines path {
+  fill: rgba(130, 100, 51, 0.035);
+  stroke: #ad9774;
+  stroke-width: 1.25;
+  stroke-dasharray: 5 6;
+  vector-effect: non-scaling-stroke;
+}
+
+.plan-speaker {
+  position: absolute;
+  top: 28px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--gold);
+}
+
+.plan-speaker span {
+  font: 9px/1.4 var(--mono);
+  letter-spacing: 0.5px;
+  color: var(--ink);
+}
+
+.plan-speaker-left { left: 8%; }
+.plan-speaker-right { right: 8%; flex-direction: row-reverse; }
+
+.plan-base {
+  position: absolute;
+  left: 50%;
+  bottom: 22px;
+  width: min(220px, 62%);
+  padding: 15px 18px;
+  transform: translateX(-50%);
+  border: 1px solid #ad9774;
+  background: var(--paper);
+  text-align: center;
+}
+
+.plan-base span,
+.plan-base small {
+  display: block;
+  font: 8px/1.5 var(--mono);
+  letter-spacing: 1px;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.plan-base strong {
+  display: block;
+  margin: 7px 0 5px;
+  font: 23px/1.1 var(--serif);
+}
+
+.plan-caption {
+  margin-bottom: 24px;
+  font-size: 12px;
+  line-height: 1.85;
+  color: var(--muted);
+}
+
+.plan-caption strong { color: var(--ink); }
+
+.mobility-note {
+  display: flex;
+  gap: 20px;
+  padding: 23px 0;
+  border-block: 1px solid var(--line);
+}
+
+.mobility-note > svg {
+  margin-top: 2px;
+  color: var(--gold);
+}
+
+.mobility-note p {
+  max-width: 530px;
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.placement-chapter .table-spec {
+  margin: 28px 0;
+}
+
+.contact-section .share-actions {
+  margin-top: 20px;
+}
+
+.contact-section .pdf-link {
+  padding: 0 18px;
+  border: 1px solid #b6a68d;
+}
+
+.contact-section .pdf-link:hover {
+  border-color: var(--gold);
+  background: rgba(250, 248, 245, 0.55);
+}
+
+@media(max-width:700px) {
+  .hero h1 {
+    font-size: 61px;
+  }
+
+  .essential .time-label {
+    font-size: 22px;
+  }
+
+  .essential .time-label span {
+    font-size: 26px;
+  }
+
+  .arrival-card {
+    gap: 15px;
+    padding: 22px 18px;
+  }
+
+  .arrival-card h3 {
+    font-size: 30px;
+  }
+
+  .arrival-card .numeric {
+    font-size: 27px;
+  }
+
+  .placement-plan {
+    min-height: 250px;
+  }
+
+  .plan-lines {
+    inset-inline: 1%;
+    width: 98%;
+  }
+
+  .plan-speaker {
+    top: 22px;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+
+  .plan-speaker-left { left: 5%; }
+  .plan-speaker-right { right: 5%; }
+
+  .plan-base {
+    bottom: 18px;
+    width: 66%;
+  }
+
+  .plan-base strong {
+    font-size: 20px;
+  }
+
+  .mobility-note {
+    gap: 15px;
+  }
+
+  .contact-section .pdf-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
 
