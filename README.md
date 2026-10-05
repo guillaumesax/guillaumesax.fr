@@ -30,3 +30,12 @@ Le catalogue se met à jour depuis Google Sheets à chaque ouverture ;
 Vérifications : `npx tsc --noEmit`, `npm run build`.
 Avec Node 22.12+ : `npm run repertoire:sync` pour rafraîchir la copie de secours,
 `node --experimental-strip-types --test tests/repertoire.test.mjs` pour les tests.
+
+## Contrat de prestation
+
+Page publiée à `https://guillaumesax.fr/contrat-prestation/`.
+Sources : `src/contract/`, entrée `contrat-prestation/index.html`.
+Le formulaire permet de préparer le contrat, dessiner une signature et télécharger un PDF reprenant la mise en page de l'aperçu.
+L'envoi direct par e-mail requiert un service d'envoi externe et les variables `VITE_CONTRACT_API_URL` et `VITE_TURNSTILE_SITE_KEY` ; le bouton d'envoi reste désactivé sans cette configuration.
+
+Vérifications : `npx tsc --noEmit`, `npm run build`.

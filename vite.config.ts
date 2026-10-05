@@ -11,6 +11,7 @@ export default defineConfig({
         main: "index.html",
         musiques: "musiques/index.html",
         technicalSheet: "technique/index.html",
+        contratPrestation: "contrat-prestation/index.html",
       },
     },
   },
