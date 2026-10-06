@@ -33,18 +33,19 @@ Avec Node 22.12+ : `npm run repertoire:sync` pour rafraîchir la copie de secour
 
 ## Contrat de prestation
 
-Page publiée à `https://guillaumesax.fr/contrat-prestation/`.
+Page publiée à `https://guillaumesax.fr/contrat-prestation` (redirection vers l'URL avec barre finale).
 Sources : `src/contract/`, entrée `contrat-prestation/index.html`.
 Le formulaire permet de préparer le contrat, dessiner une signature et télécharger un PDF reprenant la mise en page de l'aperçu.
-L'envoi direct par e-mail utilise le Worker dans `workers/contract-mail/`, Turnstile et Resend. Le bouton reste désactivé tant que les variables publiques `VITE_CONTRACT_API_URL` et `VITE_TURNSTILE_SITE_KEY` ne sont pas définies dans les variables GitHub Actions du dépôt. Elles sont intégrées au build et ne doivent contenir aucun secret.
+L'envoi direct par e-mail utilise le Worker dans `workers/contract-mail/`, Turnstile et Resend. La copie au client est cochée par défaut et peut être décochée avant l'envoi.
 
-Pour activer l'envoi :
+Configuration publiée sur les offres gratuites :
 
-1. Se connecter à Cloudflare et créer un widget Turnstile pour `guillaumesax.fr`. Noter sa clé de site publique et conserver la clé secrète dans Cloudflare.
-2. Se connecter à Resend, vérifier le sous-domaine d'envoi `mail.guillaumesax.fr` (les courriels existants du domaine principal restent chez OVH), puis créer une clé API d'envoi. Le Worker utilise `contrats@mail.guillaumesax.fr` comme expéditeur ; adapter `MAIL_FROM` si le domaine vérifié diffère.
-3. Déployer le Worker avec Wrangler depuis `workers/contract-mail/`, puis y enregistrer les secrets `TURNSTILE_SECRET` et `RESEND_API_KEY` avec `wrangler secret put`. Ne jamais enregistrer ces valeurs dans Git, GitHub Actions ou un fichier de projet suivi.
-4. Définir les variables GitHub Actions `VITE_CONTRACT_API_URL` (URL HTTPS du Worker) et `VITE_TURNSTILE_SITE_KEY` (clé publique), puis relancer `Deploy to GitHub Pages`.
-5. Envoyer un contrat fictif depuis la page publique, vérifier la réception du PDF à `contact@guillaumesax.fr` et de la copie à l'adresse de test, puis vérifier l'absence de données personnelles dans les journaux.
+- Worker : `https://guillaume-sax-contract-mail.contract-mail.workers.dev`.
+- Expéditeur : `contrats@mail.guillaumesax.fr`, domaine vérifié dans Resend avec les enregistrements DNS OVH.
+- Turnstile : widget limité à `guillaumesax.fr` ; la clé de site est une variable GitHub Actions publique.
+- Secrets `TURNSTILE_SECRET` et `RESEND_API_KEY` : uniquement dans les variables chiffrées du Worker Cloudflare. Ne jamais les enregistrer dans Git, GitHub Actions ou un fichier de projet suivi.
+
+Pour mettre à jour le Worker, déployer `workers/contract-mail/` avec Wrangler dans le compte Cloudflare existant. Pour changer l'URL du Worker ou la clé de site Turnstile, modifier les variables GitHub Actions `VITE_CONTRACT_API_URL` et `VITE_TURNSTILE_SITE_KEY`, puis relancer `Deploy to GitHub Pages`. Les variables sont intégrées au build et ne doivent contenir aucun secret.
 
 Le Worker accepte uniquement l'origine du site, vérifie le jeton Turnstile côté serveur, limite la taille et le type du PDF, et utilise une clé d'idempotence pour éviter les doublons lors d'une nouvelle tentative. La clé Resend et le secret Turnstile ne sont jamais exposés dans le navigateur.
 
