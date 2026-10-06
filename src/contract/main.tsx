@@ -76,6 +76,7 @@ function App() {
   const [error, setError] = useState('');
   const [honeypot, setHoneypot] = useState('');
   const [signatureRevision, setSignatureRevision] = useState(0);
+  const submissionId = useRef(crypto.randomUUID());
   const formRef = useRef<HTMLFormElement>(null);
   const previewRef = useRef<HTMLElement>(null);
 
@@ -91,12 +92,14 @@ function App() {
 
   const change = <K extends keyof ContractData>(field: K, value: ContractData[K]) => {
     setData(current => ({ ...current, [field]: value, ...(field === 'total' ? { deposit: (Math.round(Number(value) * 30) / 100).toFixed(2) } : {}) }));
+    submissionId.current = crypto.randomUUID();
     if (signature && field !== 'copyToClient') { setSignature(''); setSignedAt(''); setAccepted(false); setSignatureRevision(revision => revision + 1); }
     setError('');
   };
   const updateSignature = (value: string) => {
     setSignature(value);
     setSignedAt(value ? new Date().toISOString() : '');
+    submissionId.current = crypto.randomUUID();
     setError('');
   };
   const validate = () => {
@@ -131,11 +134,19 @@ function App() {
         body.append('contract', JSON.stringify({ ...data, signedAt, version: contractVersion }));
         body.append('document', pdf, `contrat-guillaume-sax-${data.eventDate}.pdf`);
         body.append('turnstile', formRef.current?.querySelector<HTMLInputElement>('[name="cf-turnstile-response"]')?.value || '');
+        body.append('submissionId', submissionId.current);
         return body;
       })() });
-      if (!response.ok) throw new Error('Envoi indisponible');
+      if (!response.ok) {
+        const result = await response.json().catch(() => ({}));
+        throw new Error(typeof result.error === 'string' ? result.error : 'Envoi indisponible. Réessayez.');
+      }
       setStatus('sent');
-    } catch { setError('L’envoi a échoué. Vos informations restent à l’écran : vous pouvez réessayer ou télécharger le PDF.'); setStatus('idle'); }
+    } catch (cause) {
+      (window as Window & { turnstile?: { reset: () => void } }).turnstile?.reset();
+      setError(`${cause instanceof Error ? cause.message : 'L’envoi a échoué.'} Vos informations restent à l’écran : vous pouvez réessayer ou télécharger le PDF.`);
+      setStatus('idle');
+    }
   };
 
   const input = (field: keyof ContractData, label: string, type = 'text', required = true, placeholder = '') => <label className="field" key={field}>
