@@ -7,7 +7,7 @@ afterEach(() => { globalThis.fetch = originalFetch; });
 
 const env = {
   ALLOWED_ORIGIN: 'https://guillaumesax.fr',
-  MAIL_FROM: 'Guillaume Sax <contrats@guillaumesax.fr>',
+  MAIL_FROM: 'Guillaume Sax <contrats@mail.guillaumesax.fr>',
   MAIL_TO: 'contact@guillaumesax.fr',
   TURNSTILE_SECRET: 'test-secret',
   RESEND_API_KEY: 'test-api-key',

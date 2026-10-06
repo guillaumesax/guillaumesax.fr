@@ -20,6 +20,10 @@ function validText(value, maximum = 500) {
   return typeof value === 'string' && value.trim().length > 0 && value.length <= maximum;
 }
 
+function validSingleLine(value, maximum = 500) {
+  return validText(value, maximum) && !/[\r\n\u0000-\u001f\u007f]/.test(value);
+}
+
 function validEmail(value) {
   return typeof value === 'string' && value.length <= 254 &&
     /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(value);
@@ -27,9 +31,11 @@ function validEmail(value) {
 
 function validContract(data) {
   if (!data || typeof data !== 'object' || Array.isArray(data)) return false;
-  const required = ['clientName', 'clientAddress', 'clientPhone', 'venue', 'venueAddress',
-    'prestation', 'quoteNumber', 'signedCity'];
-  if (!required.every(key => validText(data[key]))) return false;
+  const required = {
+    clientName: 120, clientAddress: 500, clientPhone: 60, venue: 200,
+    venueAddress: 500, prestation: 300, quoteNumber: 100, signedCity: 120,
+  };
+  if (!Object.entries(required).every(([key, maximum]) => validSingleLine(data[key], maximum))) return false;
   if (!validEmail(data.clientEmail) || data.version !== expectedVersion) return false;
   if (!/^\d{4}-\d{2}-\d{2}$/.test(data.eventDate) ||
       !/^\d{2}:\d{2}$/.test(data.startTime) || !/^\d{2}:\d{2}$/.test(data.endTime)) return false;

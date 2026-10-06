@@ -41,7 +41,7 @@ L'envoi direct par e-mail utilise le Worker dans `workers/contract-mail/`, Turns
 Pour activer l'envoi :
 
 1. Se connecter à Cloudflare et créer un widget Turnstile pour `guillaumesax.fr`. Noter sa clé de site publique et conserver la clé secrète dans Cloudflare.
-2. Se connecter à Resend, vérifier un domaine d'envoi appartenant à `guillaumesax.fr`, puis créer une clé API d'envoi. Configurer `MAIL_FROM` dans `workers/contract-mail/wrangler.toml` avec une adresse de ce domaine vérifié.
+2. Se connecter à Resend, vérifier le sous-domaine d'envoi `mail.guillaumesax.fr` (les courriels existants du domaine principal restent chez OVH), puis créer une clé API d'envoi. Le Worker utilise `contrats@mail.guillaumesax.fr` comme expéditeur ; adapter `MAIL_FROM` si le domaine vérifié diffère.
 3. Déployer le Worker avec Wrangler depuis `workers/contract-mail/`, puis y enregistrer les secrets `TURNSTILE_SECRET` et `RESEND_API_KEY` avec `wrangler secret put`. Ne jamais enregistrer ces valeurs dans Git, GitHub Actions ou un fichier de projet suivi.
 4. Définir les variables GitHub Actions `VITE_CONTRACT_API_URL` (URL HTTPS du Worker) et `VITE_TURNSTILE_SITE_KEY` (clé publique), puis relancer `Deploy to GitHub Pages`.
 5. Envoyer un contrat fictif depuis la page publique, vérifier la réception du PDF à `contact@guillaumesax.fr` et de la copie à l'adresse de test, puis vérifier l'absence de données personnelles dans les journaux.
