@@ -13,24 +13,33 @@ const captureScale = 3;
 function pageBreaks(element: HTMLElement, maximumHeight: number): number[] {
   const top = element.getBoundingClientRect().top;
   const height = Math.ceil(element.getBoundingClientRect().height);
-  const boundaries = Array.from(element.children, child =>
-    Math.ceil(child.getBoundingClientRect().bottom - top + 10),
+  const blockBoundaries = Array.from(element.children, child =>
+    Math.ceil(child.getBoundingClientRect().bottom - top + 8),
   ).filter(value => value > 0 && value < height);
+  const lineBoundaries: number[] = [];
+  const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+  while (walker.nextNode()) {
+    const node = walker.currentNode;
+    if (!node.textContent?.trim()) continue;
+    const range = document.createRange();
+    range.selectNodeContents(node);
+    for (const rect of range.getClientRects()) {
+      const boundary = Math.ceil(rect.bottom - top + 3);
+      if (boundary > 0 && boundary < height) lineBoundaries.push(boundary);
+    }
+  }
+  lineBoundaries.sort((a, b) => a - b);
   const breaks = [0];
   let position = 0;
 
-  const pages = Math.ceil(height / maximumHeight);
-  for (let page = 1; page < pages; page++) {
-    const remainingPages = pages - page;
-    const minimumRemaining = remainingPages * maximumHeight * 0.43;
-    const choices = boundaries.filter(value =>
-      value > position + 80 &&
-      value <= position + maximumHeight &&
-      height - value >= minimumRemaining &&
-      height - value <= remainingPages * maximumHeight,
-    );
-    const next = choices.at(-1)
-      ?? Math.min(position + maximumHeight, height);
+  while (position + maximumHeight < height) {
+    const limit = position + maximumHeight;
+    const blocks = blockBoundaries.filter(value => value > position + 50 && value <= limit);
+    const lines = lineBoundaries.filter(value => value > position + 50 && value <= limit);
+    // Keep whole sections together when the resulting whitespace is modest.
+    const next = blocks.at(-1) && blocks.at(-1)! >= limit - 120
+      ? blocks.at(-1)!
+      : (lines.at(-1) ?? blocks.at(-1) ?? limit);
     breaks.push(next);
     position = next;
   }
@@ -58,7 +67,8 @@ export async function generateContractPdf(preview: HTMLElement): Promise<Blob> {
       useCORS: true,
       logging: false,
       width: captureWidthPx,
-      windowWidth: Math.max(window.innerWidth, 940),
+      // html2canvas must use the same media-query width as the measured DOM.
+      windowWidth: window.innerWidth,
       scrollX: 0,
       scrollY: -window.scrollY,
     });
