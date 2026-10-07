@@ -30,7 +30,14 @@ function pageBreaks(element: HTMLElement, maximumHeight: number): number[] {
   }
   lineBoundaries.sort((a, b) => a - b);
   const breaks = [0];
-  let position = 0;
+  // Reserve page one for the parties and the prestation summary.
+  const firstClause = element.querySelector('.clause');
+  const firstClauseTop = firstClause
+    ? Math.ceil(firstClause.getBoundingClientRect().top - top)
+    : 0;
+  const introFits = firstClauseTop > 0 && firstClauseTop <= maximumHeight;
+  if (introFits) breaks.push(firstClauseTop);
+  let position = breaks.at(-1)!;
 
   while (position + maximumHeight < height) {
     const limit = position + maximumHeight;
@@ -44,6 +51,17 @@ function pageBreaks(element: HTMLElement, maximumHeight: number): number[] {
     position = next;
   }
   breaks.push(height);
+  // When the last page would contain only a short tail, share the clauses
+  // between pages two and three at a section boundary.
+  if (introFits && breaks.length === 4 && height - breaks[2] < maximumHeight * 0.55) {
+    const midpoint = (breaks[1] + height) / 2;
+    const sectionStarts = Array.from(element.querySelectorAll('.clause, .document-tail'), section =>
+      Math.ceil(section.getBoundingClientRect().top - top),
+    ).filter(value => value > breaks[1] + 50 &&
+      value - breaks[1] <= maximumHeight && height - value <= maximumHeight);
+    const balanced = sectionStarts.sort((a, b) => Math.abs(a - midpoint) - Math.abs(b - midpoint))[0];
+    if (balanced) breaks[2] = balanced;
+  }
   return breaks;
 }
 
@@ -85,8 +103,10 @@ export async function generateContractPdf(preview: HTMLElement): Promise<Blob> {
       context.fillStyle = '#fffefa';
       context.fillRect(0, 0, slice.width, slice.height);
       context.drawImage(canvas, 0, start, canvas.width, slice.height, 0, 0, slice.width, slice.height);
-      const heightMm = slice.height / canvas.width * imageWidthMm;
-      pdf.addImage(slice.toDataURL('image/png'), 'PNG', marginMm, marginMm, imageWidthMm, heightMm, undefined, 'FAST');
+      const scale = Math.min(imageWidthMm / slice.width, imageHeightMm / slice.height);
+      const widthMm = slice.width * scale;
+      const heightMm = slice.height * scale;
+      pdf.addImage(slice.toDataURL('image/png'), 'PNG', marginMm + (imageWidthMm - widthMm) / 2, marginMm, widthMm, heightMm, undefined, 'FAST');
       pdf.setDrawColor(216, 205, 187);
       pdf.line(marginMm, pageHeightMm - 15, pageWidthMm - marginMm, pageHeightMm - 15);
       pdf.setFont('helvetica', 'normal');
