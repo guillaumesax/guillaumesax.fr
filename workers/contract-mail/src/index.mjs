@@ -1,6 +1,6 @@
 const maxPdfBytes = 8 * 1024 * 1024;
 const maxRequestBytes = 12 * 1024 * 1024;
-const expectedVersion = 'Édition 2026-10';
+const expectedVersion = 'Édition 2026-10 · rév. 2';
 
 function respond(body, status, origin) {
   return new Response(status === 204 ? null : JSON.stringify(body), {
@@ -24,6 +24,10 @@ function validSingleLine(value, maximum = 500) {
   return validText(value, maximum) && !/[\r\n\u0000-\u001f\u007f]/.test(value);
 }
 
+function validMultiline(value, maximum = 500) {
+  return validText(value, maximum) && !/[\r\u0000-\u0009\u000b-\u001f\u007f]/.test(value);
+}
+
 function validEmail(value) {
   return typeof value === 'string' && value.length <= 254 &&
     /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(value);
@@ -33,11 +37,13 @@ function validContract(data) {
   if (!data || typeof data !== 'object' || Array.isArray(data)) return false;
   const required = {
     clientName: 120, clientAddress: 500, clientPhone: 60, venue: 200,
-    venueAddress: 500, prestation: 300, quoteNumber: 100, signedCity: 120,
+    venueAddress: 500, signedCity: 120,
   };
   if (!Object.entries(required).every(([key, maximum]) => validSingleLine(data[key], maximum))) return false;
+  if (!validMultiline(data.prestation, 300)) return false;
   if (!validEmail(data.clientEmail) || data.version !== expectedVersion) return false;
   if (!/^\d{4}-\d{2}-\d{2}$/.test(data.eventDate) ||
+      !/^\d{4}-\d{2}-\d{2}$/.test(data.quoteDate) ||
       !/^\d{2}:\d{2}$/.test(data.startTime) || !/^\d{2}:\d{2}$/.test(data.endTime)) return false;
   if (typeof data.imagePermission !== 'boolean' || typeof data.copyToClient !== 'boolean') return false;
   if ((data.options && !validText(data.options, 2000)) ||
@@ -106,7 +112,7 @@ export default {
     const attachment = { filename: `contrat-guillaume-sax-${contract.eventDate}.pdf`, content: base64(bytes) };
     const summary = `Nouveau contrat signé par ${contract.clientName}\n` +
       `Événement : ${contract.eventDate}\nLieu : ${contract.venue}\n` +
-      `Devis : ${contract.quoteNumber}\nMontant : ${contract.total} €\n` +
+      `Date du devis : ${contract.quoteDate}\nPrestation : ${contract.prestation}\nMontant : ${contract.total} €\n` +
       `Contact : ${contract.clientEmail} · ${contract.clientPhone}\n\n` +
       'Le contrat signé est joint en PDF.';
     const message = {

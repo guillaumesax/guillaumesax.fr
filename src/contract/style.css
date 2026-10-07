@@ -8,3 +8,4 @@
 .document-details{border-bottom:1px solid var(--line);padding:15px 0}.document-details p{font-size:10px;line-height:1.6;color:var(--muted);overflow-wrap:anywhere}.document-details p+p{margin-top:6px}.sign-section>p a{text-decoration:underline;text-underline-offset:3px;color:var(--ink)}.turnstile{margin-top:22px;min-height:65px}
 .pdf-capture .contract-document{width:560px;max-width:none;margin:0;padding:31px 36px 40px;box-shadow:none}
 .pdf-capture .contract-document>h2{font-size:62px;margin-top:48px}
+.prestation-summary{white-space:pre-line}

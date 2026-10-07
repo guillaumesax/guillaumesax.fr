@@ -13,16 +13,17 @@ const env = {
   RESEND_API_KEY: 'test-api-key',
 };
 
-function request(copyToClient = true, pdf = true) {
+function request(copyToClient = true, pdf = true, overrides = {}) {
   const data = {
     clientName: 'Camille Exemple', clientAddress: '1 rue Exemple, 75000 Paris',
     clientEmail: 'camille@example.test', clientPhone: '0600000000',
     eventDate: '2027-06-12', venue: 'Domaine des Lilas',
-    venueAddress: '2 avenue Exemple, 75000 Paris', prestation: 'Cocktail',
-    startTime: '18:00', endTime: '20:00', quoteNumber: 'DEV-TEST',
+    venueAddress: '2 avenue Exemple, 75000 Paris', prestation: 'Cérémonie\nVin d’honneur, entrée des mariés, soirée',
+    startTime: '18:00', endTime: '20:00', quoteDate: '2027-02-10',
     signedCity: 'Paris', total: '1000', deposit: '300',
     imagePermission: false, copyToClient, signedAt: new Date().toISOString(),
-    version: 'Édition 2026-10', options: '', specialTerms: '',
+    version: 'Édition 2026-10 · rév. 2', options: '', specialTerms: '',
+    ...overrides,
   };
   const form = new FormData();
   form.set('contract', JSON.stringify(data));
@@ -50,6 +51,8 @@ test('sends one PDF email with an optional client copy', async () => {
   assert.deepEqual(message.to, ['contact@guillaumesax.fr']);
   assert.deepEqual(message.cc, ['camille@example.test']);
   assert.equal(message.attachments[0].filename, 'contrat-guillaume-sax-2027-06-12.pdf');
+  assert.match(message.text, /Date du devis : 2027-02-10/);
+  assert.match(message.text, /Prestation : Cérémonie\nVin d’honneur, entrée des mariés, soirée/);
   assert.ok(atob(message.attachments[0].content).startsWith('%PDF-'));
   assert.equal(calls[1].options.headers['Idempotency-Key'], '00000000-0000-4000-8000-000000000001');
 });
@@ -72,6 +75,13 @@ test('rejects invalid PDF and invalid Turnstile without sending', async () => {
   assert.equal(calls, 0);
   assert.equal((await worker.fetch(request(), env)).status, 403);
   assert.equal(calls, 1);
+});
+
+test('requires a date for the quote before sending', async () => {
+  let calls = 0;
+  globalThis.fetch = async () => { calls++; return Response.json({ success: true, hostname: 'guillaumesax.fr' }); };
+  assert.equal((await worker.fetch(request(true, true, { quoteDate: '' }), env)).status, 400);
+  assert.equal(calls, 0);
 });
 
 test('rejects other origins and reports mail provider failure', async () => {
