@@ -77,32 +77,80 @@ export async function generateContractPdf(preview: HTMLElement): Promise<Blob> {
   try {
     await document.fonts.ready;
     await Promise.all(Array.from(copy.querySelectorAll('img'), image => image.decode().catch(() => undefined)));
+    if (!copy.querySelector('.document-tail img')) throw new Error('Signature absente du PDF');
     const maxSliceHeight = Math.floor(imageHeightMm * captureWidthPx / imageWidthMm);
-    const breaks = pageBreaks(copy, maxSliceHeight);
-    const canvas = await html2canvas(copy, {
+    let breaks: number[] = [];
+    let signatureBounds: { x: number; y: number; width: number; height: number } | null = null;
+    const captureOptions = {
       backgroundColor: '#fffefa',
       scale: captureScale,
       useCORS: true,
       logging: false,
       width: captureWidthPx,
-      // html2canvas must use the same media-query width as the measured DOM.
-      windowWidth: window.innerWidth,
+      // Use one desktop-sized layout on every device, including mobile Safari.
+      windowWidth: 1024,
       scrollX: 0,
-      scrollY: -window.scrollY,
-    });
+      scrollY: 0,
+      onclone: (_document: Document, element: HTMLElement) => {
+        const measured = pageBreaks(element, maxSliceHeight);
+        if (breaks.length && (measured.length !== breaks.length ||
+          measured.some((value, index) => Math.abs(value - breaks[index]) > 2))) {
+          throw new Error('La mise en page du PDF a changé pendant la génération');
+        }
+        breaks = measured;
+        const signature = element.querySelector('.document-tail img');
+        if (!signature) throw new Error('Signature absente de la capture');
+        const documentRect = element.getBoundingClientRect();
+        const signatureRect = signature.getBoundingClientRect();
+        signatureBounds = {
+          x: signatureRect.left - documentRect.left,
+          y: signatureRect.top - documentRect.top,
+          width: signatureRect.width,
+          height: signatureRect.height,
+        };
+      },
+    };
+    // Each canvas stays below mobile browsers' canvas-size limits. Measuring in
+    // html2canvas's clone keeps page breaks aligned with the rendered text.
+    const firstCanvas = await html2canvas(copy, { ...captureOptions, y: 0, height: maxSliceHeight });
+    if (breaks.length < 2) throw new Error('Découpage du PDF indisponible');
     const pdf = new jsPDF({ unit: 'mm', format: 'a4', compress: true });
+    let signatureInkFound = false;
     for (let index = 0; index < breaks.length - 1; index++) {
       if (index) pdf.addPage();
-      const start = Math.round(breaks[index] * captureScale);
-      const end = Math.min(canvas.height, Math.round(breaks[index + 1] * captureScale));
+      const start = breaks[index];
+      const pageHeight = breaks[index + 1] - start;
+      const canvas = index === 0 ? firstCanvas : await html2canvas(copy, {
+        ...captureOptions, y: start, height: pageHeight,
+      });
+      const sliceHeight = Math.round(pageHeight * captureScale);
+      if (sliceHeight < 1 || canvas.height < sliceHeight - 2) {
+        throw new Error('Une page du PDF est incomplète');
+      }
       const slice = document.createElement('canvas');
       slice.width = canvas.width;
-      slice.height = end - start;
+      slice.height = sliceHeight;
       const context = slice.getContext('2d');
       if (!context) throw new Error('Canvas indisponible');
       context.fillStyle = '#fffefa';
       context.fillRect(0, 0, slice.width, slice.height);
-      context.drawImage(canvas, 0, start, canvas.width, slice.height, 0, 0, slice.width, slice.height);
+      context.drawImage(canvas, 0, 0, canvas.width, slice.height, 0, 0, slice.width, slice.height);
+      if (signatureBounds) {
+        const x = Math.max(0, Math.floor(signatureBounds.x * captureScale));
+        const y = Math.max(0, Math.floor((signatureBounds.y - start) * captureScale));
+        const width = Math.min(slice.width - x, Math.ceil(signatureBounds.width * captureScale));
+        const height = Math.min(slice.height - y, Math.ceil((signatureBounds.y + signatureBounds.height - start) * captureScale) - y);
+        if (width > 0 && height > 0) {
+          const pixels = context.getImageData(x, y, width, height).data;
+          for (let offset = 0; offset < pixels.length; offset += 4) {
+            if (pixels[offset + 3] > 100 && pixels[offset] < 120 &&
+              pixels[offset + 1] < 120 && pixels[offset + 2] < 120) {
+              signatureInkFound = true;
+              break;
+            }
+          }
+        }
+      }
       const scale = Math.min(imageWidthMm / slice.width, imageHeightMm / slice.height);
       const widthMm = slice.width * scale;
       const heightMm = slice.height * scale;
@@ -115,6 +163,7 @@ export async function generateContractPdf(preview: HTMLElement): Promise<Blob> {
       pdf.text(`Guillaume Sax · ${contractVersion}`, marginMm, pageHeightMm - 10);
       pdf.text(`${index + 1} / ${breaks.length - 1}`, pageWidthMm - marginMm, pageHeightMm - 10, { align: 'right' });
     }
+    if (!signatureInkFound) throw new Error('Signature manquante dans le PDF');
     return pdf.output('blob');
   } finally {
     capture.remove();
